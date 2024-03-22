@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0; /* Добавляем */
+}
+
+ul#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute; /* Изменено на абсолютное позиционирование */
+    top: 0; /* Помещаем меню вверх экрана */
+    left: 0; /* Помещаем меню влево экрана */
+    width: 100%; /* Ширина меню 100% */
+    background-color: #333;
+}
+
+ul#navbar li {
+    float: left;
+}
+
+ul#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul#navbar li a:hover {
+    background-color: #111;
+}
+
+
+.memes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px; /* Добавляем отступ сверху, равный высоте меню */
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Добавляем анимацию */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Увеличиваем размер при наведении */
+}
+
+
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1.2em; /* Адаптивный размер текста */
+}
+
+/* Стили для выпадающего меню */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333; /* Изменено на цвет основного меню */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white; /* Изменено на белый цвет текста */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Скрываем меню с годами */
+.dropdown-content {
+    display: none;
+}
+
+/* Показываем меню с годами при наведении на кнопку "Memes" */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Скрываем меню с годами, когда курсор покидает его область */
+.dropdown-content:hover {
+    display: block;
+}
+/* Обновленные стили для всплывающего меню с годами */
+.submenu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Убираем стили для меню с годами */
+.submenu:hover .years-menu {
+    display: none;
+}
+
+/* Изменения для убирания маркеров */
+.years-menu {
+    list-style-type: none; /* Убираем маркеры */
+    padding: 0; /* Убираем внутренний отступ */
+    margin: 0; /* Убираем внешний отступ */
+}
+
+.years-menu a {
+    color: white; /* Изменяем цвет текста на белый, как у основного меню */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.years-menu a:hover {
+    background-color: #111; /* Изменяем цвет фона при наведении */
+}
+.card-link {
+    color: black; /* Цвет текста внутри ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.card-link:hover {
+    text-decoration: underline; /* Добавляем подчеркивание при наведении */
+}
