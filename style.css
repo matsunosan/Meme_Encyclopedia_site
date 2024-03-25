@@ -205,3 +205,47 @@ footer {
     margin-right: 5px;
 }
 
+.login-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9cdad;
+    width: 250px; /* Измените эту ширину на ваше усмотрение */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.login-dropdown form {
+    padding: 10px;
+}
+
+.login-dropdown input[type="text"],
+.login-dropdown input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.login-dropdown button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-dropdown button:hover {
+    background-color: #ff5043;
+}
+
+.login-dropdown p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.login-dropdown a {
+    color: #111;
+    text-decoration: underline;
+}

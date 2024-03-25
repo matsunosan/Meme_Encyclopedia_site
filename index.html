@@ -3,6 +3,9 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <script src="hotkeys.js"></script>
+    <script src="login.js"></script>
+    <script src="selector.js"></script>
+
 
 </head>
 <body>
@@ -11,64 +14,79 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li style="float:right"><a href="#" class="menu-icon"><img src="icons/user.svg" alt="Menu Icon"></a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Memes</a>
-            <div class="dropdown-content">
-                <a href="#">Images</a>
-                <a href="#">Videos</a>
-                <a href="#">People</a>
-                <a href="#">Trends</a>
-            </div>
-        </li>
+        <li style="float:right" class="login-menu">
+          <a href="#" class="menu-icon" onclick="toggleLoginMenu()">
+              <img src="icons/user.svg" alt="Menu Icon">
+          </a>
+          <div id="login-dropdown" class="dropdown-content login-dropdown">
+              <form action="#" method="post">
+                  <input type="text" placeholder="Username" name="username">
+                  <input type="password" placeholder="Password" name="password">
+                  <button type="submit">Login</button>
+              </form>
+              <p>Don't have an account? <a href="#">Register</a></p>
+          </div>
+      </li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Memes</a>
+        <div class="dropdown-content">
+            <a href="#" data-tag="all">All</a>
+            <a href="#" data-tag="images">Images</a>
+            <a href="#" data-tag="videos">Videos</a>
+            <a href="#" data-tag="people">People</a>
+            <a href="#" data-tag="trends">Trends</a>
+        </div>
+    </li>
+    
     </ul>
       
       <!-- Карточки мемов -->
       <div class="memes-container">
-        <a href="mem1.html" class="card-link">
+        <a href="mem1.html" class="card-link" data-tags="trends">
             <div class="card">
             <img src="images/cerveza-cristal-memy.jpg" alt="Cerveza Cristal beer">
             <h2>Cerveza Cristal beer</h2>
             </div>
         </a>
-        <a href="mem1.html" class="card-link">
+        <a href="mem1.html" class="card-link" data-tags="videos, images">
             <div class="card">
                 <img src="images/grustnyj-homjak-768x512.jpg" alt="Sad hamster with big eyes">
                 <h2>Sad hamster with big eyes</h2>
             </div>
         </a>
         <!-- Добавьте другие карточки мемов здесь -->
-        <a href="mem1.html" class="card-link">
+        <a href="mem1.html" class="card-link" data-tags="images, trends">
             <div class="card">
                 <img src="images/altushki.jpg" alt="Alt-girl on Gosuslugi">
                 <h2>Alt-girl on Gosuslugi</h2>
             </div>
         </a>
-        <a href="mem1.html" class="card-link">
+        <a href="mem1.html" class="card-link" data-tags="people">
           <div class="card">
             <img src="images/taker-karlson-intervju.jpg" alt="Tucker Carlson">
             <h2>Tacker Karlson</h2>
           </div>
         </a>
-        <a href="mem1.html" class="card-link">
+        <a href="mem1.html" class="card-link" data-tags="trends">
           <div class="card">
             <img src="images/evrei-v-tonnele.jpg" alt="Jewish tunnel">
             <h2>Jewish tunnel</h2>
           </div>
         </a>
-        <a href="mem1.html" class="card-link">
+        <a href="mem1.html" class="card-link" data-tags="videos">
           <div class="card">
             <img src="images/tinkoff.jpg" alt="Tinkov rating scale">
             <h2>Tinkov rating scale</h2>
           </div>
         </a>
-        <a href="mem1.html" class="card-link">
+        <a href="mem1.html" class="card-link" data-tags="images">
           <div class="card">
             <img src="images/mem-sharikov.jpg" alt="Self-confident Sharikov">
             <h2>Self-confident Sharikov</h2>
           </div>
         </a>
-        <a href="mem1.html" class="card-link">
+        <a href="mem1.html" class="card-link" data-tags="trends">
           <div class="card">
             <img src="images/MojoDojoCasaHouse.png" alt="Mojo Dojo Casa House">
             <h2>Mojo Dojo Casa House</h2>
