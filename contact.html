@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li style="float:right" class="login-menu">
+                  <a href="#" class="menu-icon" onclick="toggleLoginMenu()">
+                      <img src="icons/user.svg" alt="Menu Icon">
+                  </a>
+                  <div id="login-dropdown" class="dropdown-content login-dropdown">
+                      <form action="#" method="post">
+                          <input type="text" placeholder="Username" name="username">
+                          <input type="password" placeholder="Password" name="password">
+                          <button type="submit">Login</button>
+                      </form>
+                      <p>Don't have an account? <a href="#">Register</a></p>
+                  </div>
+              </li>
+              
+              <li class="dropdown">
+                <a href="index.html" class="dropbtn">Memes</a>
+                <div class="dropdown-content">
+                    <a href="#" data-tag="all">All</a>
+                    <a href="#" data-tag="images">Images</a>
+                    <a href="#" data-tag="videos">Videos</a>
+                    <a href="#" data-tag="people">People</a>
+                    <a href="#" data-tag="trends">Trends</a>
+                </div>
+            </li>
+        </nav>
+    </header>
+
+    <div class="fcf-body">
+
+        <div id="fcf-form">
+        <h3 class="fcf-h3">Contact us</h3>
+    
+        <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+            
+            <div class="fcf-form-group">
+                <label for="Name" class="fcf-label">Your name</label>
+                <div class="fcf-input-group">
+                    <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                </div>
+            </div>
+    
+            <div class="fcf-form-group">
+                <label for="Email" class="fcf-label">Your email address</label>
+                <div class="fcf-input-group">
+                    <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                </div>
+            </div>
+    
+            <div class="fcf-form-group">
+                <label for="Message" class="fcf-label">Your message</label>
+                <div class="fcf-input-group">
+                    <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+                </div>
+            </div>
+    
+            <div class="fcf-form-group">
+                <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+            </div>
+    
+        </form>
+        </div>
+    
+    </div>
+    
+
+    <footer>
+        <ul class="footer-menu">
+            <li>
+                <a href="#">
+                    <div class="social-icons-container">
+                        <img src="icons/facebook-fill-svgrepo-com.svg" alt="Facebook">
+                        <img src="icons/instagram-fill-svgrepo-com.svg" alt="Instagram">
+                        <img src="icons/telegram-fill-svgrepo-com.svg" alt="Telegram">
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">
+                    <img src="icons/faq-svgrepo-com.svg" alt="FAQ">
+                    FAQ
+                </a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">
+                    <img src="icons/about-filled-svgrepo-com.svg" alt="About">
+                    About
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+</html>
