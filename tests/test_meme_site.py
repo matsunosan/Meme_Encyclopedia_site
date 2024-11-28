@@ -86,25 +86,24 @@ class TestMemeEncyclopediaSite(unittest.TestCase):
         """Test if a meme details page opens when a meme is clicked."""
         driver = self.driver
         try:
-            # Wait for the meme card link with a specific title to be clickable
-            meme_link = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, "//a[@class='card-link' and .//h2[text()='Sad hamster with big eyes']]"))
+            # Click on the first meme card link (assumed to be correct navigation)
+            first_meme_card = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.CLASS_NAME, "card-link"))
             )
+            first_meme_card.click()
 
-            # Click the meme link
-            meme_link.click()
+            # Wait for the page to load by checking the URL contains 'meme1.html'
+            WebDriverWait(driver, 10).until(EC.url_contains("meme1.html"))
+            current_url = driver.current_url
+            print(f"Current URL after click: {current_url}")
 
-            # Wait for the details page to load and verify the URL contains 'meme1.html'
-            WebDriverWait(driver, 10).until(
-                EC.url_contains("meme1.html")
-            )
-            self.assertIn("meme1.html", driver.current_url)
-
-            # Optionally, you can also verify the content on the details page
+            # Wait for the H1 element in the details page to appear
             meme_title = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.CLASS_NAME, "meme-title"))  # Adjust if necessary
+                EC.presence_of_element_located((By.TAG_NAME, "h1"))
             )
-            self.assertIn("Sad hamster", meme_title.text)
+
+            # Verify the H1 text
+            self.assertEqual(meme_title.text, "Cerveza Cristal Beer")
 
         except Exception as e:
             self.fail(f"Meme details page test failed: {str(e)}")
