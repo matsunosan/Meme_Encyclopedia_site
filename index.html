@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Encyclopedia</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/login.js"></script>
     <script src="scripts/selector.js"></script>
-
-
 </head>
 <body>
 
     <ul id="navbar">
         <li><a href="index.html">Home</a></li>
         <li><a href="#news">News</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" id="contactLink">Contact</a></li>
         <li style="float:right" class="login-menu">
-          <a href="#" class="menu-icon" onclick="toggleLoginMenu()">
+          <a href="#" class="menu-icon" id="loginButton" onclick="toggleLoginMenu()">
               <img src="icons/user.svg" alt="Menu Icon">
           </a>
-          <div id="login-dropdown" class="dropdown-content login-dropdown">
+          <div id="loginDropdown" class="dropdown-content login-dropdown">
               <form action="#" method="post">
-                  <input type="text" placeholder="Username" name="username">
-                  <input type="password" placeholder="Password" name="password">
+                  <input type="text" id="username" placeholder="Username" name="username">
+                  <input type="password" id="password" placeholder="Password" name="password">
                   <button type="submit">Login</button>
               </form>
               <p>Don't have an account? <a href="#">Register</a></p>
@@ -28,16 +29,15 @@
       </li>
       
       <li class="dropdown">
-        <a href="#" class="dropbtn">Memes</a>
+        <a href="#" class="dropbtn" id="categoryButton">Memes</a>
         <div class="dropdown-content">
-            <a href="#" data-tag="all">All</a>
+            <a href="#" data-tag="all" class="filterButton" id="filterButton">All</a>
             <a href="#" data-tag="images">Images</a>
             <a href="#" data-tag="videos">Videos</a>
             <a href="#" data-tag="people">People</a>
             <a href="#" data-tag="trends">Trends</a>
         </div>
     </li>
-    
     </ul>
       <div class="memes-container">
         <a href="meme1.html" class="card-link" data-tags="trends">
@@ -46,43 +46,43 @@
             <h2>Cerveza Cristal beer</h2>
             </div>
         </a>
-        <a href="mem1.html" class="card-link" data-tags="videos, images">
+        <a href="meme1.html" class="card-link" data-tags="videos, images">
             <div class="card">
                 <img src="images/grustnyj-homjak-768x512.jpg" alt="Sad hamster with big eyes">
                 <h2>Sad hamster with big eyes</h2>
             </div>
         </a>
-        <a href="mem1.html" class="card-link" data-tags="images, trends">
+        <a href="meme1.html" class="card-link" data-tags="images, trends">
             <div class="card">
                 <img src="images/altushki.jpg" alt="Alt-girl on Gosuslugi">
                 <h2>Alt-girl on Gosuslugi</h2>
             </div>
         </a>
-        <a href="mem1.html" class="card-link" data-tags="people">
+        <a href="meme1.html" class="card-link" data-tags="people">
           <div class="card">
             <img src="images/taker-karlson-intervju.jpg" alt="Tucker Carlson">
             <h2>Tacker Karlson</h2>
           </div>
         </a>
-        <a href="mem1.html" class="card-link" data-tags="trends">
+        <a href="meme1.html" class="card-link" data-tags="trends">
           <div class="card">
             <img src="images/evrei-v-tonnele.jpg" alt="Jewish tunnel">
             <h2>Jewish tunnel</h2>
           </div>
         </a>
-        <a href="mem1.html" class="card-link" data-tags="videos">
+        <a href="meme1.html" class="card-link" data-tags="videos">
           <div class="card">
             <img src="images/tinkoff.jpg" alt="Tinkov rating scale">
             <h2>Tinkov rating scale</h2>
           </div>
         </a>
-        <a href="mem1.html" class="card-link" data-tags="images">
+        <a href="meme1.html" class="card-link" data-tags="images">
           <div class="card">
             <img src="images/mem-sharikov.jpg" alt="Self-confident Sharikov">
             <h2>Self-confident Sharikov</h2>
           </div>
         </a>
-        <a href="mem1.html" class="card-link" data-tags="trends">
+        <a href="meme1.html" class="card-link" data-tags="trends">
           <div class="card">
             <img src="images/MojoDojoCasaHouse.png" alt="Mojo Dojo Casa House">
             <h2>Mojo Dojo Casa House</h2>
@@ -115,6 +115,12 @@
             </li>
         </ul>
     </footer>
+    <script>
+      function toggleLoginMenu() {
+          var dropdown = document.getElementById('loginDropdown');
+          dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      }
+  </script>
     
 </body>
 </html>
